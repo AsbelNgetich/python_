@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}"> -->
+   
+    <title>Play</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Welcome!</h1>
+    <div style="display: flex; justify-content: center;">
+    {% for x in range(0,3): %}
+    <div style="width:200px; margin: 10px; height:200px; border:1px solid#000; background-color:rgb(108, 141, 218); "></div>
+    {%endfor%}
+    </div>
+</body>
+</html>
