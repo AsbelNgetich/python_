@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+  color: green;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.green_box {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  background-color: chartreuse;
+}
+
+.white_box {
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
+  background-color: white;
+}
