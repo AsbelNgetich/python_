@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+h1 {
+  color: indigo;
+  text-align: center;
+}
+.container {
+  border: 2px solid black;
+  height: 400px;
+  width: 400px;
+  background-color: rgb(184, 179, 179);
+  padding: 30px;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#comments {
+  height: 200px;
+  width: 395px;
+}
+
+#submit_button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: right;
+}

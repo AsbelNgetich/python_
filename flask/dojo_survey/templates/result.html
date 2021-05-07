@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+    <title>Result</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Submited info</h1>
+        <h3>Name:   {{name}}</h3>
+        <h3>Dojo Location:   {{location}}</h3>
+        <h3>Favourite Language:   {{language}}</h3>
+        <p><span style="font-weight: bold;">Comments:</span>   {{comments}} </p>
+        <input type="submit" value="Go back">
+    </div>
+</body>
+</html>
