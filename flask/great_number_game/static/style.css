@@ -1,0 +1,74 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.game_form {
+  margin-top: 50px;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.display_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+}
+
+.high_or_low {
+  display: flex;
+  border: 1px solid black;
+  background-color: rgb(247, 21, 21);
+  color: white;
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+#number_txtb {
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  height: 20px;
+  width: 80px;
+}
+#submit_btn {
+  height: 20px;
+  width: 60px;
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: rgb(27, 158, 27);
+  color: white;
+  height: 200px;
+  width: 200px;
+  margin-top: 20px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.match input {
+  margin-top: 35px;
+}
