@@ -9,7 +9,13 @@
 </head>
 <body>
     {% for user_info in my_user %}
-    <h2>User {{user_info['id']}}</h2>
+
+    <div class="header">
+        <h2>User {{user_info['id']}}</h2> 
+        <a href="/users">Home</a>
+
+    </div>
+
     <div class="user_info">
         <p>Full Name:   {{user_info['first_name']}}</p>
         <p>Email:   {{user_info['last_name']}}</p>
@@ -19,7 +25,7 @@
    
     <p>
         <a href="/users/{{user_info['id']}}/edit">Edit</a> |
-        <a href="">Delete</a>
+        <a href="/users/{{user_info['id']}}/delete">Delete</a>
     <p>
         {% endfor %}
 </body>

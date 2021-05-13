@@ -13,8 +13,8 @@
         <a href="/users">Home</a>
     </div>
     {% for user_info in my_user %}
-    <form class="edit_user" action="/users/{{user_info['id']}}/edit" method="PUT">
-      
+    <form class="edit_user" action="/users/update" method="POST">
+        <input type="hidden" name="id" value="{{user_info['id']}}">
         <label for="fname">First Name:</label>
         <input type="text" name="fname" value="{{user_info['first_name']}}" >
         <label for="lname">Last Name:</label>
