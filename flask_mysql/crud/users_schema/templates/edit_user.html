@@ -12,18 +12,21 @@
         <h2>Edit User</h2>
         <a href="/users">Home</a>
     </div>
-    <form class="edit_user" action="/users/x/edit" method="PUT">
+    {% for user_info in my_user %}
+    <form class="edit_user" action="/users/{{user_info['id']}}/edit" method="PUT">
+      
         <label for="fname">First Name:</label>
-        <input type="text" name="fname">
+        <input type="text" name="fname" value="{{user_info['first_name']}}" >
         <label for="lname">Last Name:</label>
-        <input type="text" name="lname">
+        <input type="text" name="lname" value="{{user_info['last_name']}}">
         <label for="email">email:</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="{{user_info['email']}}">
         <div >
              <input id="submit_btn" type="submit" value="Update">
-             <a href="/users/{{x}}">Show User</a>
+             <a href="/users/{{user_info['id']}}">  Show User</a>
         </div>
 
     </form>
+    {% endfor %}
 </body>
 </html>

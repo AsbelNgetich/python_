@@ -1,0 +1,32 @@
+
+methods=["GET"], methods=["POST"] )
+SyntaxError: keyword argument repeated: methods
+
+
+methods=["GET"],["POST"] )
+SyntaxError: positional argument follows keyword argument
+
+
+print(user['first_name'])
+TypeError: list indices must be integers or slices, not str
+
+print(user[1])
+IndexError: list index out of range
+
+
+print("type of user id " + type(user_id))
+TypeError: can only concatenate str (not "type") to str
+
+
+TypeError: 'bool' object is not iterable
+
+
+return render_template("edit_user.html", user=user)
+NameError
+NameError: name 'user' is not defined
+
+
+Not Found
+The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+IndentationError: expected an indented block

@@ -16,11 +16,11 @@
         <p>Created On:   {{user_info['created_at']}}</p>
         <p>Last Updated On:   {{user_info['updated_at']}}</p>
     </div>
-    {% endfor %}
+   
     <p>
-        <a href="/users/x/edit">Edit</a> |
+        <a href="/users/{{user_info['id']}}/edit">Edit</a> |
         <a href="">Delete</a>
     <p>
-    
+        {% endfor %}
 </body>
 </html>

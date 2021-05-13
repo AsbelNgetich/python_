@@ -29,12 +29,7 @@ def create_user():
 
 @app.route("/users/<int:user_id>",  methods=["GET","POST"] )
 def user_info(user_id):
-    print(".............anfdifnall..............")
-    print(user_id)
-    print("type of user id ") 
-    print(type(user_id))
-
-
+ 
     query= "SELECT * FROM users WHERE id= %(id)s;"
     data={
         "id":user_id
@@ -42,23 +37,31 @@ def user_info(user_id):
 
     mysql = connectToMySQL("users_schema")
     user = mysql.query_db(query,data)
-    print(".....you are here.........the sql query should have ran")
-    print(user)
-    print("...between......list...")
+   
     return render_template("user_info.html", my_user=user )
 
-@app.route("/users/x/edit",  methods=["GET","PUT","POST"] )
-def edit_user( ):
+@app.route("/users/<int:user_id>/edit",  methods=["GET","PUT","POST"] )
+def edit_user_form(user_id ):
+
+    print("inside user edit function")
+    print(user_id)
+    query= "SELECT * FROM users WHERE id= %(id)s;"
+    data={
+        "id":user_id
+    }
+
+    mysql = connectToMySQL("users_schema")
+    user = mysql.query_db(query,data)
     
-    # query= "UPDATE users SET first_name = 'new_value', last_name='anotther' WHERE id=id"
+   
+    return render_template("edit_user.html", my_user=user)
+
+
+# @app.route("/users/x/edit",  methods=["GET","PUT","POST"] )
+# def update_user_info( ):
     
-    #  "SELECT * FROM users WHERE id='@user_id';"
-    # mysql = connectToMySQL("users_schema")
-    # user = mysql.query_db(query)
-    # print(".....you are here.........the sql query should have ran")
-    # print(user)
-    # print("...between......list...")
-    return render_template("edit_user.html")
+   
+#     return render_template("edit_user.html")
 
 
 if __name__ == "__main__":
