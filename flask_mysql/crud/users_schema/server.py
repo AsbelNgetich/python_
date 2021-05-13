@@ -2,11 +2,10 @@ from flask import Flask, render_template, request, redirect
 from mysqlconnection import connectToMySQL    # import the function that will return an instance of a connection
 
 app = Flask(__name__)
-@app.route("/")
+@app.route("/users")
 def index():
     mysql = connectToMySQL("users_schema")
     users = mysql.query_db("SELECT * FROM users;")
-    print(users)
     return render_template("index.html", all_users = users)
 
 @app.route("/users/new" )
@@ -26,9 +25,40 @@ def create_user():
 
     my_db = connectToMySQL("users_schema")
     my_db.query_db(query,data)
-    return redirect("/")
+    return redirect("/users")
+
+@app.route("/users/<int:user_id>",  methods=["GET","POST"] )
+def user_info(user_id):
+    print(".............anfdifnall..............")
+    print(user_id)
+    print("type of user id ") 
+    print(type(user_id))
 
 
+    query= "SELECT * FROM users WHERE id= %(id)s;"
+    data={
+        "id":user_id
+    }
+
+    mysql = connectToMySQL("users_schema")
+    user = mysql.query_db(query,data)
+    print(".....you are here.........the sql query should have ran")
+    print(user)
+    print("...between......list...")
+    return render_template("user_info.html", my_user=user )
+
+@app.route("/users/x/edit",  methods=["GET","PUT","POST"] )
+def edit_user( ):
+    
+    # query= "UPDATE users SET first_name = 'new_value', last_name='anotther' WHERE id=id"
+    
+    #  "SELECT * FROM users WHERE id='@user_id';"
+    # mysql = connectToMySQL("users_schema")
+    # user = mysql.query_db(query)
+    # print(".....you are here.........the sql query should have ran")
+    # print(user)
+    # print("...between......list...")
+    return render_template("edit_user.html")
 
 
 if __name__ == "__main__":

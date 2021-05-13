@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>User Information</title>
+</head>
+<body>
+    {% for user_info in my_user %}
+    <h2>User {{user_info['id']}}</h2>
+    <div class="user_info">
+        <p>Full Name:   {{user_info['first_name']}}</p>
+        <p>Email:   {{user_info['last_name']}}</p>
+        <p>Created On:   {{user_info['created_at']}}</p>
+        <p>Last Updated On:   {{user_info['updated_at']}}</p>
+    </div>
+    {% endfor %}
+    <p>
+        <a href="/users/x/edit">Edit</a> |
+        <a href="">Delete</a>
+    <p>
+    
+</body>
+</html>

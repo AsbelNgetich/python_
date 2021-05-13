@@ -22,9 +22,11 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+/* Add user page */
+
 .add_user {
   height: 500px;
-  width: 600px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -36,5 +38,27 @@ tr:nth-child(even) {
 
 #submit_btn {
   width: 80px;
-  margin: 5px;
+  margin-top: 5px;
+}
+
+/* User info page */
+
+.user_info {
+  padding: 20px;
+  border: 1px solid black;
+  height: 200px;
+  width: 400px;
+}
+
+/* Edit user page */
+.edit_user {
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.edit_user input {
+  margin-bottom: 10px;
 }
