@@ -1,0 +1,18 @@
+SET SQL_SAFE_UPDATES = 0;
+
+SELECT  first_name, last_name
+FROM actor;
+
+INSERT INTO actor (first_name, last_name) 
+VALUES('Jim', 'Carrey');
+
+UPDATE actor 
+SET last_name = 'Corey' 
+WHERE last_name='Carrey';
+
+DELETE 
+FROM actor
+WHERE actor_id = 201;
+
+SELECT first_name, last_name
+FROM actor;

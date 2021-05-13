@@ -1,0 +1,70 @@
+Query: Create 5 different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+
+INSERT INTO authors (name) 
+VALUES('Jane Austen'), ('Emily Dickinson'),( 'Fyodor Dostoevsky'), ('William Shakespeare'),( 'Lau Tzu');
+
+
+Query: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+
+INSERT INTO books (tittle, num_of_pages) 
+VALUES('C sharp','350'), ('Java','370'),( 'Python','300'), ('PHP','280'),( 'Ruby','275');
+
+
+Query: Change the name of the C Sharp book to C#
+
+UPDATE books 
+SET tittle = 'C#'
+WHERE tittle = 'C sharp';
+
+Query: Change the first name of the 4th author to Bill
+
+UPDATE authors 
+SET name = 'Bill Shakespeare'
+WHERE id = '4';
+
+Query: Have the second author favorite the first 3 books
+
+INSERT INTO favorites (book_id, author_id) 
+VALUES('1', '2'),('2','2'),('3','2');
+
+Query: Have the third author favorite the first 4 books
+
+INSERT INTO favorites (book_id, author_id) 
+VALUES('1', '3'),('2','3'),('3','3'),('4','3');
+
+Query: Have the fourth author favorite all the books
+
+INSERT INTO favorites (book_id, author_id) 
+VALUES('1', '4'),('2','4'),('3','4'),('4','4'),('5','4');
+
+Query: Retrieve all the authors who favorited the 3rd book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
