@@ -24,8 +24,10 @@ def create_user():
     }
 
     my_db = connectToMySQL("users_schema")
-    my_db.query_db(query,data)
-    return redirect("/users")
+    userid = my_db.query_db(query,data)
+
+
+    return redirect("/users/" + str(userid))
 
 @app.route("/users/<int:user_id>",  methods=["GET","POST"] )
 def user_info(user_id):
