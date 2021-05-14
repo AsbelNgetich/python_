@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Edit user</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Edit User</h2>
+        <a href="/users">Home</a>
+    </div>
+    {% for user_info in my_user %}
+    <form class="edit_user" action="/users/update" method="POST">
+        <input type="hidden" name="id" value="{{user_info['id']}}">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" value="{{user_info['first_name']}}" >
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" value="{{user_info['last_name']}}">
+        <label for="email">email:</label>
+        <input type="text" name="email" value="{{user_info['email']}}">
+        <div >
+             <input id="submit_btn" type="submit" value="Update">
+             <a href="/users/{{user_info['id']}}">  Show User</a>
+        </div>
+
+    </form>
+    {% endfor %}
+</body>
+</html>
