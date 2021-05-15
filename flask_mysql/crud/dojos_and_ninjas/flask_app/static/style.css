@@ -1,0 +1,72 @@
+.add_ninja {
+  height: 250px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.add_ninja input,
+select {
+  margin-bottom: 10px;
+}
+
+#submit_btn {
+  width: 80px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.select_ninjas {
+  height: 600px;
+  width: 400px;
+}
+
+/* dojos.html*/
+.dojo_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left_side {
+  display: flex;
+  flex-direction: column;
+}
+#create_dojo_btn {
+  margin-top: 15px;
+}
+
+.rigth_side {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dojos table */
+.all_dojos {
+  height: 400px;
+  width: 300px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.show_ninjas_table {
+  border: 1px solid black;
+  width: 400px;
+  margin-bottom: 15px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+.show_ninjas_table td,
+th {
+  border-left: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.show_ninjas_table td:first-child {
+  border-left: none;
+}

@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  height: 800px;
+  width: 800px;
+  margin-top: 20px;
+  background-color: rgb(221, 221, 204);
+  border: 1px solid black;
+}
+
+.user_forms {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.registration_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_user {
+  display: flex;
+  flex-direction: column;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin-bottom: 5px;
+}
+
+#submit_btn {
+  margin-top: 5px;
+}
