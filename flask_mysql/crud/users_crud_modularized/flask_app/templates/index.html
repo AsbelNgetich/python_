@@ -37,3 +37,71 @@
 
 </body>
 </html>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{{url_for('static',filename='style.css')}}">
+    <title>Add Magazine</title>
+</head>
+<body>
+
+    <div class="container_main">
+        <div class="container_addmag_header">
+            
+            <div class="header_right">
+                <a href="">Add Magazine</a>
+                <a  href="/users">Account </a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <h3>Magazines</h3>
+
+        <table>         
+                {% for user in all_users %}
+                <tr>
+                    <td> <a href="">book title</a> added by {{user["first_name"]}} {{user["last_name"]}} </td> 
+               
+                    <td>
+                        <a href="/users/{{user['id']}}">Show</a> |
+                        <a href="/users/{{user['id']}}/edit">Edit</a> |
+                        <a href="/users/{{user['id']}}/delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+        
+        </table>
+        <a href="/users/new">Add a New User</a>
+        
+        <a href="/logout">Log out</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

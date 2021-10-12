@@ -29,9 +29,17 @@ def register_user():
     isvalid = User.validate_user(data)
 
     if isvalid:
-        User.register_user(data)
-        session['user_first_name'] = request.form["first_name"]
-        return redirect("/success") 
+        new_email = {    
+        "email": request.form["email"]
+         }
+        user = User.get_user(new_email)
+        if user == None:     
+            User.register_user(data)
+            session['user_first_name'] = request.form["first_name"]
+            return redirect("/success") 
+        else:
+            flash("Your email has already been registered!")
+            return redirect("/")
 
     return redirect("/")
 

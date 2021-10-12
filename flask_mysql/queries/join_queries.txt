@@ -1,0 +1,130 @@
+joining two tables. 
+two columns from first table and a column from another
+
+SELECT ninjas.first_name, ninjas.last_name, dojos.name
+FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id;
+
+joining more than two tables
+add a join with a different table on the next line
+
+SELECT ninjas.first_name, ninjas.last_name, dojos.name
+FROM ninjas
+JOIN dojos ON ninjas.dojo_id = dojos.id;
+JOIN clients On dojos.id = clients.dojos_id
+
+
+Left join syntax is similar to regular join
+joining two tables. 
+two columns from first table and a column from another
+
+SELECT ninjas.first_name, ninjas.last_name, dojos.name
+FROM ninjas
+LEFT JOIN dojos ON ninjas.dojo_id = dojos.id;
+
+Summing up the amount in a column. use group by and add a Sum function to the column
+SELECT clients.first_name, clients.last_name, SUM(billing.amount)
+FROM clients
+JOIN billing ON clients.id = billing.clients_id
+GROUP BY clients.id;
+
+counting the total number of leads for each site. // its basically counting the total number of rows.
+
+SELECT COUNT(leads.id), sites.domain_name
+FROM sites
+JOIN leads ON sites.id = leads.sites_id
+GROUP BY site.id
+
+
+Many to many relationship
+
+SELECT * FROM orders 
+JOIN items_orders ON orders.id = items_orders.order_id 
+JOIN items ON items.id = items_orders.item_id;
+
+////////////////////////////////////////////////////////////
+BELOW is A 4 table queries
+/////////////////////////////////
+
+
+1. What query would you run to get all tweets from the user id of 1?
+
+SELECT *
+FROM users
+LEFT JOIN tweets
+ON users.id = tweets.user_id
+WHERE users.id = 1;
+
+
+You can just grab the tweets by:
+
+SELECT tweets.tweet
+FROM users
+LEFT JOIN tweets
+ON users.id = tweets.user_id
+WHERE users.id = 1;
+
+Or rename the output column that you want as kobe_tweets by modifying the statement to look like the following:
+
+SELECT tweets.tweet as kobe_tweets
+FROM users
+LEFT JOIN tweets
+ON users.id = tweets.user_id
+WHERE users.id = 1;
+
+2. What query would return all the tweets that the user with id 2 has tagged as favorites?
+
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id = 2;
+
+3. What query would you run to get all the tweets that user with id 2, or user with id 1, has tagged as favorites?
+
+SELECT first_name, tweet
+FROM users
+LEFT JOIN faves
+ON users.id = faves.user_id
+LEFT JOIN tweets
+ON faves.tweet_id = tweets.id
+WHERE users.id = 1 OR users.id = 2;
+
+
+//this forth one uses self join
+4. What query would you run to get all the users that are following the user with id 1?
+
+SELECT users.first_name as followed, users2.first_name as follower
+FROM users
+LEFT JOIN follows
+ON users.id = follows.followed_id
+LEFT JOIN users as users2
+ON users2.id = follows.follower_id
+WHERE users.id = 1;
+
+5. What query would you run to get all users that are not following the user with id of 2?
+
+SELECT *
+FROM users
+WHERE users.id NOT IN (
+SELECT follower_id
+FROM follows
+WHERE followed_id = 2
+) 
+
+We can run functions on specific columns and often times it is paired up with the GROUP BY statement. We will have plenty of practice with functions in the next tab. 
+
+SELECT users.first_name as user, COUNT(users2.first_name) as follower_count
+FROM users
+LEFT JOIN follows
+ON users.id = follows.followed_id
+LEFT JOIN users as users2
+ON users2.id = follows.follower_id
+WHERE users.id = 1
+GROUP BY users.id;
+
+
+
+

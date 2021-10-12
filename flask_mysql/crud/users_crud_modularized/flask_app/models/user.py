@@ -21,13 +21,6 @@ class User:
             users.append(cls(u))
         return users
 
-    # burger.py...
-# gets all the burgers and returns them in a list of burger objects .
-# @classmethod
-# def save(cls,data):
-# 	query = "Insert INTO burgers (name,bun,meat,calories,created_at,updated_at) VALUES(%(name)s,%(bun)s,%(meat)s,%(calories)s,NOW(),NOW());"
-# 	burger_id = connectToMySQL('burgers').query_db(query,data)
-# 	return burger_id
     @classmethod
     def save(cls,data):
         query = "INSERT INTO users(first_name,last_name,email) VALUES (%(fn)s,%(ln)s,%(email)s);"

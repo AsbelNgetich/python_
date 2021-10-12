@@ -47,18 +47,25 @@ class User:
         is_valid = True 
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
         ALPHABET_REGEX = re.compile(r'^[a-zA-Z]+$')
-        if len(data['first_name']) < 2 or len(data['first_name']) > 60 :
-            flash("First Name must be at least 2 to 60 characters.")
+        PASSWORD_REGEX = re.compile(r'^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])^.{8,50}$')
+   
+
+
+
+        if len(data['first_name']) < 2 or len(data['first_name']) > 50 :
+            flash("First Name must be at least 2 to 50 characters.")
             is_valid = False
-        if len(data['last_name']) < 2 or len(data['last_name']) > 60:
-            flash("Last Name must be at least 2 to 60 characters.")
+        if len(data['last_name']) < 2 or len(data['last_name']) > 50:
+            flash("Last Name must be at least 2 to 50 characters.")
             is_valid = False
-        if data['password'] == "":
-            flash("Password fields cannot be blank!")
-            is_valid = False
-        if len(data['password']) < 8 or len(data['password']) > 60:
-            flash("Password must be at least 8 to 60 characters.")
-            is_valid = False
+        if not PASSWORD_REGEX.match(data['password']):
+            flash("Password formart needs to consist of an uppercase, a lowercase and atleast a number!")
+            flash("Password must also be at least 8 to 50 characters!")
+            is_valid = False          
+
+        # if len(data['password']) < 8 or len(data['password']) > 60:
+        #     flash("Password must be at least 8 to 60 characters.")
+        #     is_valid = False
         if data['password'] != data['confirm_password'] :
             flash("Password and Confirm password fields doesn't match.")
             is_valid = False
